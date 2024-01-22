@@ -1,0 +1,15 @@
+@import "../style/mixin";
+
+footer{
+  display: flex;
+  width: 100%;
+  height: var(--size-xxxl);
+  justify-content: space-between;
+  color: var(--grayscale-40);
+  @include fontSp2;
+  >div{
+    display: flex;
+    align-items: center;
+    gap: var(--margin);
+  }
+}

@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  width: 100%;
+  height: var(--size-xxxl);
+  justify-content: space-between;
+  color: var(--grayscale-40);
+  font-size: var(--font-sp2);
+  font-weight: 500;
+}
+footer > div {
+  display: flex;
+  align-items: center;
+  gap: var(--margin);
+}

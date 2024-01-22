@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/util.js"></script>
+  <script src="../data/nav.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="./modal.css">
+  <title>나의 그룹 관리</title>
+</head>
+<body class="tab-body modal">
+  <!-- 아래 div가 기존 data-tab div 내부에 삽입됩니다. -->
+<div id="pageContent" class="group-setting">
+  <h3>나의 그룹 관리</h3>
+  <form id="formGroupSetting" class=" transfer-form">
+    <div class="transfer-container">
+      <div>
+        <h4>사용자 리스트</h4>
+        <label for="user_name" class="label--input-search">
+          <input type="search" id="user_name" placeholder="키워드 검색">
+          <div class="icon size-xxl">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6043 4.33301C7.57503 4.33301 4.33398 7.54764 4.33398 11.4821C4.33398 15.4166 7.57503 18.6313 11.6043 18.6313C13.5604 18.6313 15.3323 17.873 16.6381 16.6404C18.0196 15.3364 18.8745 13.5069 18.8745 11.4821C18.8745 7.54764 15.6335 4.33301 11.6043 4.33301ZM2.33398 11.4821C2.33398 6.41535 6.49839 2.33301 11.6043 2.33301C16.7101 2.33301 20.8745 6.41535 20.8745 11.4821C20.8745 13.7132 20.0646 15.7568 18.7236 17.3423L21.0359 19.6207C21.4292 20.0083 21.4339 20.6415 21.0463 21.0349C20.6587 21.4283 20.0255 21.4329 19.6321 21.0453L17.2736 18.7214C15.7056 19.919 13.7376 20.6313 11.6043 20.6313C6.49839 20.6313 2.33398 16.5489 2.33398 11.4821Z" fill="#898989"/>
+            </svg>              
+          </div>
+        </label>
+        <ul id="source_container"></ul>
+      </div>
+      <div class="transfer-controller">
+        <button type="button" class="btn-quaternary" id="add_menu">
+          <div class="icon icon-circle bg-primary-middle size-m2 ">
+            <svg viewBox="0 0 12 12"><path d="M3.48848 0.489191C3.19558 0.782079 3.19557 1.25695 3.48846 1.54985L7.93935 6.00091L3.48847 10.4518C3.19558 10.7447 3.19558 11.2196 3.48847 11.5124C3.78136 11.8053 4.25624 11.8053 4.54913 11.5124L9.53033 6.53125C9.82322 6.23836 9.82322 5.76349 9.53034 5.4706L4.54914 0.489211C4.25625 0.196312 3.78138 0.196304 3.48848 0.489191Z" /></svg>
+          </div>
+          추가
+        </button>
+        <button type="button" class="btn-quaternary" id="remove_menu">
+          <div class="icon icon-circle bg-primary-middle size-m2 ">
+            <svg viewBox="0 0 12 12"><path d="M8.51152 0.489191C8.80442 0.782079 8.80443 1.25695 8.51154 1.54985L4.06065 6.00091L8.51153 10.4518C8.80442 10.7447 8.80442 11.2196 8.51153 11.5124C8.21864 11.8053 7.74376 11.8053 7.45087 11.5124L2.46967 6.53125C2.17678 6.23836 2.17678 5.76349 2.46966 5.4706L7.45086 0.489211C7.74375 0.196312 8.21862 0.196304 8.51152 0.489191Z" /></svg>
+          </div>
+          빼기
+        </button>
+      </div>
+      <div>
+        <h4>선택된 사용자</h4>
+        <input type="text" placeholder="그룹 이름" id="group_name" name="group_name">
+        <ul id="target_container" class="draggable-order-container"></ul>
+      </div>
+    </div>
+    <div>
+      <h4>메뉴 순서</h4>
+      <div>
+        <label class="label--input-flex" for="place_top">
+          <input type="radio" name="placeby" id="place_top" checked>
+          <p>새 그룹메뉴 최상단에 추가</p>
+        </label>
+        <label class="label--input-flex" for="place_bottom">
+          <input type="radio" name="placeby" id="place_bottom" checked>
+          <p>새 그룹메뉴 최하단에 추가</p>
+        </label>
+      </div>
+    </div>
+    <div class="flex-btn-row">
+      <button type="submit" class="btn-primary-l" >저장</button>
+      <button class="btn-secondary-l" id="closeModal">취소</button>
+    </div>
+  </form>
+</div>
+
+<script src="group-setting.js"></script>
+</body>
+</html>

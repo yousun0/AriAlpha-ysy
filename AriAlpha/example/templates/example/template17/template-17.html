@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/data/data.js"></script>
+  <script src="/js/util.js"></script>
+  <script src="/js/inputs.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+
+  <!-- <link rel="stylesheet" href="./calendar.css"> -->
+  <title>템플릿17</title>
+</head>
+<body class="tab-body">
+  <div class="template-17 template" id="pageContent">
+    <div class="tab-filter-container">
+      <div></div>      
+    </div>
+    <div class="col-2">
+      <div>
+        <div class="input-row">
+          <h4>서브타이틀</h4>
+        </div>
+        <div class="grid-container">
+          <div class="grid-table ag-theme-quartz" data-grid-data="gridOptions" ></div>
+        </div>
+        <p>총 00건이 수정되었습니다.</p>
+      </div>
+      <div>
+        <div class="input-row">
+          <h4>서브타이틀</h4>
+        </div>
+        <div class="grid-container">
+          <div class="grid-table ag-theme-quartz" data-grid-data="gridOptions" ></div>
+        </div>
+        <p>총 00건이 수정되었습니다.</p>
+      </div>
+    </div>
+    <div class="no-gap flex-col">
+      <ul class="template-tab">
+        <li class="template-tab-navs active" data-template-tab="1">탭메뉴1</li>
+        <li class="template-tab-navs" data-template-tab="2">탭메뉴2</li>
+      </ul>
+      <div class="template-tab-contents-container flex-col">
+        <div class="template-tab-contents active flex-1" data-template-tab="1">
+          <div class="input-row">
+            <div class="button-container">
+              <button type="button" class="btn-quaternary" id="add_menu">
+                <div class="icon icon-circle bg-view size-m2 ">
+                  <svg viewBox="0 0 12 12"><path d="M3.48848 0.489191C3.19558 0.782079 3.19557 1.25695 3.48846 1.54985L7.93935 6.00091L3.48847 10.4518C3.19558 10.7447 3.19558 11.2196 3.48847 11.5124C3.78136 11.8053 4.25624 11.8053 4.54913 11.5124L9.53033 6.53125C9.82322 6.23836 9.82322 5.76349 9.53034 5.4706L4.54914 0.489211C4.25625 0.196312 3.78138 0.196304 3.48848 0.489191Z" /></svg>
+                </div>
+                행추가
+              </button>
+            </div>
+          </div>
+          <div class="grid-container">
+            <div class="grid-table ag-theme-quartz" data-grid-data="gridOptions" ></div>
+          </div>
+          <p>총 00건이 수정되었습니다.</p>
+        </div>
+        <div class="template-tab-contents  flex-1" data-template-tab="2">
+          <div class="input-row">
+            <div class="button-container">
+              <button type="button" class="btn-quaternary" id="add_menu">
+                <div class="icon icon-circle bg-view size-m2 ">
+                  <svg viewBox="0 0 12 12"><path d="M3.48848 0.489191C3.19558 0.782079 3.19557 1.25695 3.48846 1.54985L7.93935 6.00091L3.48847 10.4518C3.19558 10.7447 3.19558 11.2196 3.48847 11.5124C3.78136 11.8053 4.25624 11.8053 4.54913 11.5124L9.53033 6.53125C9.82322 6.23836 9.82322 5.76349 9.53034 5.4706L4.54914 0.489211C4.25625 0.196312 3.78138 0.196304 3.48848 0.489191Z" /></svg>
+                </div>
+                행추가
+              </button>
+            </div>
+          </div>
+          <div class="grid-container">
+            <div class="grid-table ag-theme-quartz" data-grid-data="gridOptions" ></div>
+          </div>
+          <p>총 00건이 수정되었습니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="button-container">
+        <button type="button" class="btn-quaternary" id="add_menu">
+          <div class="icon icon-circle bg-view size-m2 ">
+            <svg viewBox="0 0 12 12"><path d="M3.48848 0.489191C3.19558 0.782079 3.19557 1.25695 3.48846 1.54985L7.93935 6.00091L3.48847 10.4518C3.19558 10.7447 3.19558 11.2196 3.48847 11.5124C3.78136 11.8053 4.25624 11.8053 4.54913 11.5124L9.53033 6.53125C9.82322 6.23836 9.82322 5.76349 9.53034 5.4706L4.54914 0.489211C4.25625 0.196312 3.78138 0.196304 3.48848 0.489191Z" /></svg>
+          </div>
+          행추가
+        </button>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-table ag-theme-quartz" data-grid-data="gridOptions" ></div>
+    </div>
+    <p>총 00건이 수정되었습니다.</p>
+  </div>
+  <script src="./template-17.js"></script>
+</body>
+</html>
+
+
+      <!-- <div>
+        <label for="pending_worktab" class="toggle-bar" >
+          <input type="checkbox" name="status" id="pending_worktab">
+          <div class="toggle-bg"></div>
+          <div class="toggle-thumb"></div>
+        </label>
+        <label for="pending_worktab">보류중</label>
+      </div>
+      <div>
+        <label for="complete_worktab" class="toggle-bar" >
+          <input type="checkbox" name="status" id="complete_worktab">
+          <div class="toggle-bg"></div>
+          <div class="toggle-thumb"></div>
+        </label>
+        <label for="complete_worktab">작업완료</label>
+      </div> -->

@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{% static 'js/util.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/style/style.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/modal/modal.css' %}">
+  <title>배경이미지 설정하기</title>
+</head>
+<body class="tab-body modal">
+  <!-- 아래 div가 기존 data-tab div 내부에 삽입됩니다. -->
+<div id="pageContent" class="change-theme">
+  <h3>배경이미지 설정하기</h3>
+  <form id="formChangeTheme">
+    <!-- <div> -->
+      <div>
+        <h4>이미지로 설정하기</h4>
+        <div class="image-input-holder">
+          <label for="bg-1">
+            <input type="radio" name="theme" id="bg-1" checked>
+            <figure>
+              <img src="{% static 'assets/img/bg-1.jpg' %}" alt="bg-1">
+            </figure>
+          </label>
+          <label for="bg-2">
+            <input type="radio" name="theme" id="bg-2">
+            <figure>
+              <img src="{% static 'assets/img/bg-2.jpg' %}" alt="bg-2">
+            </figure>
+          </label>
+          <label for="bg-3">
+            <input type="radio" name="theme" id="bg-3">
+            <figure>
+              <img src="{% static 'assets/img/bg-3.jpg' %}" alt="bg-3">
+            </figure>
+          </label>
+          <label for="bg-4">
+            <input type="radio" name="theme" id="bg-4">
+            <figure>
+              <img src="{% static 'assets/img/bg-4.jpg' %}" alt="bg-4">
+            </figure>
+          </label>
+          <label for="bg-5">
+            <input type="radio" name="theme" id="bg-5">
+            <figure>
+              <img src="{% static 'assets/img/bg-5.jpg' %}" alt="bg-5">
+            </figure>
+          </label>
+          <label for="bg-6">
+            <input type="radio" name="theme" id="bg-6">
+            <figure>
+              <img src="{% static 'assets/img/bg-6.jpg' %}" alt="bg-6">
+            </figure>
+          </label>
+          <label for="bg-7">
+            <input type="radio" name="theme" id="bg-7">
+            <figure>
+              <img src="{% static 'assets/img/bg-7.jpg' %}" alt="bg-7">
+            </figure>
+          </label>
+          <label for="bg-8">
+            <input type="radio" name="theme" id="bg-8">
+            <figure>
+              <img src="{% static 'assets/img/bg-8.jpg' %}" alt="bg-8">
+            </figure>
+          </label>
+        </div>
+      </div>
+      <div>
+        <h4>단색으로 설정하기</h4>
+        <div>
+          <input type="radio">
+          <input type="radio">
+          <input type="radio">
+          <input type="radio">
+        </div>
+      </div>
+    <!-- </div> -->
+    <div class="flex-btn-row">
+      <button class="btn-primary-l">변경</button>
+      <button class="btn-secondary-l" id="closeModal">취소</button>
+    </div>
+  </form>
+</div>
+
+<script src="{% static 'home/js/modal/change-theme.js' %}"></script>
+</body>
+</html>

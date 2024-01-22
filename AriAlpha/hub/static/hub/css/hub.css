@@ -1,0 +1,94 @@
+.hub main {
+  padding: var(--margin) var(--size-xxxl) var(--size-xxxl);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.hub main header, .hub main .image-container {
+  margin-bottom: var(--size-m2);
+}
+.hub main header {
+  display: flex;
+  justify-content: space-between;
+  height: var(--size-xxxl);
+}
+.hub main header .logo, .hub main header .prof {
+  height: 100%;
+}
+.hub main header .logo {
+  width: calc(var(--size-xxxl) * 2.991556649);
+  height: var(--size-xxxl);
+}
+.hub main header .logo svg path {
+  fill: var(--primary-middle);
+}
+.hub main header .prof {
+  display: flex;
+  align-items: center;
+}
+.hub main header .prof--img {
+  width: var(--size-xxxl);
+  height: var(--size-xxxl);
+  background-size: cover;
+  border-radius: 100px;
+  margin-right: var(--margin);
+}
+.hub main .image-container {
+  flex: 1;
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+}
+.hub main .blocks {
+  display: flex;
+  height: clamp(180px, 20vw, 256px);
+  gap: var(--margin);
+  line-height: 1.4;
+}
+.hub main .blocks .big-col {
+  width: 20%;
+  height: 100%;
+}
+.hub main .blocks .big-col a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hub main .blocks .cols {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--margin);
+}
+.hub main .blocks .cols > div {
+  width: calc((100% - var(--margin) * 3) * 0.25);
+  height: calc((100% - var(--margin)) * 0.5);
+}
+.hub main .blocks .big-col:not(h3), .hub main .blocks .cols > div {
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+}
+.hub main .blocks .big-col, .hub main .blocks .cols > div {
+  padding: var(--size-m1) var(--size-m3);
+}
+.hub main .blocks p {
+  color: var(--grayscale-40);
+}
+.hub main .blocks h3:not(.big-col) {
+  color: var(--primary-middle);
+}
+.hub main .blocks .big-col h3 {
+  margin-bottom: var(--size-xl);
+}
+.hub main .blocks .cols > div a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.hub main .blocks .go-arrow {
+  position: absolute;
+  right: -0.2rem;
+  top: 0.2rem;
+}

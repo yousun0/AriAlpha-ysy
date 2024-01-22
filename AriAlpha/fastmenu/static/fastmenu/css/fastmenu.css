@@ -1,0 +1,83 @@
+:root {
+  --right-sidebar-width: 40px;
+}
+
+.contents--side_container {
+  flex-shrink: 0;
+  transition: 0.4s width ease-in-out;
+  width: var(--right-sidebar-width);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+.contents--side_container > div {
+  border-radius: var(--rounded-box);
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  margin-bottom: var(--margin);
+  overflow: hidden;
+}
+.contents--side_container > div:last-child {
+  margin-bottom: 0;
+  overflow: hidden scroll;
+  scroll-behavior: smooth;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  flex: 1;
+}
+.contents--side_container > div:last-child::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.contents--side_container > div:last-child::-webkit-scrollbar-track {
+  background: transparent;
+}
+.contents--side_container > div:last-child::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.contents--side_container > div:last-child::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+.contents--side_container > div button {
+  width: 100%;
+}
+.contents--side_container .btn-icon > *:not(.icon-circle) {
+  text-wrap: pre;
+}
+.contents--side_container.is-open {
+  --right-sidebar-width: clamp(100px, 15%, 150px);
+}
+.contents--side_container.is-open .btn-icon .icon-circle {
+  margin-right: var(--size-s);
+}
+.contents--side_container:not(.is-open) .btn-icon {
+  justify-content: center;
+}
+.contents--side_container:not(.is-open) .btn-icon > *:not(.icon-circle) {
+  display: none;
+}
+.contents--side_container .sp2, .contents--side_container .sp2:visited, .contents--side_container .sp2:link {
+  color: inherit;
+}
+
+@media screen and (max-width: 1280px) {
+  .contents--side_container {
+    width: 100%;
+    flex-direction: row;
+    gap: var(--margin);
+  }
+  .contents--side_container > div {
+    margin-bottom: 0;
+  }
+  .contents--side_container > div.sidemenu-menu1 {
+    max-width: 100%;
+    max-height: unset;
+    display: flex;
+    height: var(--size-xxxl);
+    overflow: scroll hidden;
+  }
+}

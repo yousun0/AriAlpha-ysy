@@ -1,0 +1,313 @@
+@import "../style/mixin";
+
+:root{
+  --header-info-container-height: var(--size-xxxl);
+}
+header.main--header_container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: var(--header-info-container-height);
+  user-select: none;
+  // background: var(--color-background);
+  @include rounded(var(--rounded-box));
+
+  a, a:link, a:visited{
+    color: var(--color-text);
+  }
+
+  &,ul,li{
+    list-style: none;
+  }
+
+  >div:not(.header-info-modal){
+    display: flex;
+    margin-bottom: var(--size-xs);
+  }
+  >div:first-child{width: 30%;}
+  >div:nth-child(2){width: 70%;}
+  
+  .btn-icon-r{
+    width: 100%;
+    padding: var(--size-s) var(--margin);
+  }
+
+  .apt-info{
+    z-index: 2;
+    >*{margin-right: var(--margin);}
+    .btn-icon-r{
+      width: calc(100% - var(--margin) - var(--size-xxl));
+    }
+  }
+  
+
+  &.is-open{
+    --header-info-container-height: calc(var(--size-xxxl) * 2 + var(--size-xxxs));
+    // height: calc(var(--size-xxxl) * 2 + var(--size-xxxs));
+    .header-info-modal{
+      display: flex;
+    }
+  }
+
+}
+
+.header--nav_container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+  height: var(--size-xxxl);
+
+  >*{
+    margin-left:var(--size-xxxs);
+  }
+  
+  >.is-open{
+    button::before{
+      opacity: 1 !important;
+    }
+    .sitemap, .modal-group-menu{
+      display: block;
+    }
+    
+  }
+  
+}
+.group-menu-container{
+  position: absolute;
+  display: none;
+  top: 100%;
+  z-index: 100;
+  @include modalBox;
+  @include bg-blur;
+  width: 100%;
+  padding: var(--margin);
+
+  a{
+    display: block;
+    padding: var(--size-xxxs) 0;
+  }
+
+
+  &.active{
+    display: block;
+  }
+}
+
+.modal-group-menu{
+  position:absolute;
+  z-index: 10;
+  @include modalButton;
+  @include bg-blur;
+  width: 100%;
+  padding: var(--margin);
+  margin-top: var(--size-xs);
+  display: none;
+
+  a{
+    display: block;
+    padding:  var(--size-xxxs) 0;
+  }
+}
+
+
+.header-info-modal{
+  @include w-full;
+  @include modalButton;
+  height: var(--size-xxxl);
+  padding: var(--size-xxxs) var(--margin);
+  align-items: center;
+  margin-bottom: 0 !important;
+  display: none;
+
+  >*{
+    margin-right: var(--margin);
+  }
+
+  .close-btn{
+    position:absolute;
+    right: var(--margin);
+    top: 50%;
+    transform: translate(0, -50%);
+    @include flexCenter;
+    margin: 0;
+  }
+}
+
+.sitemap{
+  position: fixed;
+  z-index: 1000;
+  right: var(--margin);
+  left: var(--margin);
+  width: calc(100% - var(--margin) * 2);
+  bottom: var(--margin);
+  top: calc((var(--margin) - var(--size-xxs)) + var(--size-xxxl) + var(--size-s));
+  padding: var(--margin) var(--size-l) 0;
+  @include modalBox;
+  background: var(--color-invert);
+  @include flexCol;
+  display: none;
+
+  h4{
+    width: calc((100vw - var(--margin) * 2) / 12);
+    height: var(--size-xxxl);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &,ul, li{
+    list-style: none;
+  }
+
+  li{
+    display: flex;
+    gap: var(--margin);
+    flex-wrap: wrap;
+  }
+
+  >ul >li{
+    margin-bottom: var(--size-xs);
+    align-items: center;
+  }
+
+  >div{
+    display: flex;
+    flex: 1;
+    gap: var(--margin);
+    // height: calc(100% - var(--size-xxl) * 2);
+    height: calc(100% - var(--size-xxl) * 2 - var(--size-xxs) * 4);
+    >div:nth-child(1){width: 80%;}
+    >div:nth-child(2){width: 20%; min-width: 230px;}
+  }
+
+  .menu-scroller{
+    flex: 1;
+    overflow-y: scroll;
+    padding-bottom: var(--size-l);
+    @include scrollHide;
+  }
+
+  .sitemap-index-container{
+    display: flex;
+    background: var(--primary-lightest);
+    @include rounded(var(--rounded-box));
+    flex: 1;
+    overflow-x: scroll;
+    @include scrollHide;
+    
+    >li{
+      flex: 1;
+      @include flexCenter;
+      min-width: 100px;
+
+      &.active{
+        background: var(--primary-middle);
+        @include rounded(var(--rounded-box));
+        color: var(--color-invert);
+        
+      }
+    }
+
+    a{
+      color: inherit;
+      height: var(--size-xxxl);
+      @include fontH4Bold;
+      @include flexCenter;
+      width: 100%;
+      @include rounded(var(--rounded-box));
+      &:hover{
+        background: var(--primary-middle);
+        color: var(--color-invert);
+      }
+    }
+  }
+
+  .sitemap-menu-container{
+
+    h4{
+      color: var(--primary-middle);
+    }
+    >li, h5{
+      flex-wrap: nowrap;
+      margin-bottom: var(--margin);
+    }
+    >li >ul{
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--color-invertBackground);
+      stroke: var(--color-invertStroke);
+      @include rounded(var(--rounded-box));
+      padding: var(--margin);
+      gap: var(--margin);
+    }
+    ul >li{
+      display: block;
+      width: calc((100vw - var(--margin) * 2) / 12);
+      flex-shrink: 0;
+      word-break: break-all;
+      font-size: var(--font-sp);
+
+      a{
+        cursor: pointer;
+        display: block;
+        padding: calc(var(--size-xxxs) / 2) 0;
+      }
+    }
+
+    li ul li ul li{
+      padding: 1px 0;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-flow: inherit;
+      justify-content: space-between;
+      gap: 0;
+      a{
+        overflow-wrap: anywhere;
+      }
+
+      .icon{
+        flex-shrink: 0;
+        svg path{
+          fill: var(--grayscale-40);
+        }
+      }
+    }
+  }
+
+  .groupmenu-cart{
+    @include flexCol;
+    align-items: center;
+    height: 100%;
+    .group-mode-off, .group-mode-on{
+      flex: 1;
+      height: calc(100% - var(--size-xxl));
+      @include flexCol;
+      justify-content: center;
+      display: none;
+      padding-bottom: var(--margin);
+    }
+    button.w-full{
+      margin-bottom: var(--size-s);
+    }
+
+    &.active .group-mode-on, &:not(.active) .group-mode-off{
+      display: flex;
+    }
+
+    .group-mode-on{
+      
+      .group-mode-cart{
+        flex: 1;
+        height: 100%;
+        overflow: auto;
+
+      }
+    }
+    h4{
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,466 @@
+:root {
+  --sidebar-width: var(--size-xxxl);
+}
+
+nav.body--side_container, .modal-sidebar > div {
+  flex-shrink: 0;
+  width: var(--sidebar-width);
+  max-height: 100%;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s width ease-in-out;
+}
+nav.body--side_container, nav.body--side_container .menu-1, .modal-sidebar > div, .modal-sidebar > div .menu-1 {
+  gap: var(--size-xs);
+}
+nav.body--side_container a, nav.body--side_container a:link, nav.body--side_container a:visited, .modal-sidebar > div a, .modal-sidebar > div a:link, .modal-sidebar > div a:visited {
+  color: var(--color-text);
+}
+nav.body--side_container ul, nav.body--side_container li, .modal-sidebar > div ul, .modal-sidebar > div li {
+  list-style: none;
+}
+nav.body--side_container:not(.is-open) button, .modal-sidebar > div:not(.is-open) button {
+  padding: var(--size-xxxxs);
+}
+nav.body--side_container.is-open, .modal-sidebar > div.is-open {
+  --sidebar-width: clamp(140px, 15%, 200px);
+}
+nav.body--side_container.is-open .btn-fixed-label, .modal-sidebar > div.is-open .btn-fixed-label {
+  opacity: 1 !important;
+}
+nav.body--side_container.is-open .logo-row .logo, .modal-sidebar > div.is-open .logo-row .logo {
+  width: calc(var(--size-xxxl) * 2.9913);
+  top: 0;
+  left: 0;
+  transform: none;
+}
+nav.body--side_container.is-open .logo-row .logo > div:first-child, .modal-sidebar > div.is-open .logo-row .logo > div:first-child {
+  width: 74.16512%;
+}
+nav.body--side_container.is-open .logo-row .logo > div:last-child, .modal-sidebar > div.is-open .logo-row .logo > div:last-child {
+  width: 25.83488%;
+}
+nav.body--side_container.is-open .fold-btn, .modal-sidebar > div.is-open .fold-btn {
+  position: absolute;
+  left: unset;
+  right: 0;
+  top: 0;
+  width: var(--size-xxxl);
+  border-radius: var(--rounded-button);
+  cursor: pointer;
+  background: var(--color-background);
+  border: var(--color-stroke);
+}
+nav.body--side_container.is-open .fold-btn::before, .modal-sidebar > div.is-open .fold-btn::before {
+  border-radius: var(--rounded-button);
+  content: "";
+  position: absolute;
+  background: var(--color-background);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--color-stroke);
+  opacity: 0;
+  transition: 0.25s all ease-in-out;
+}
+nav.body--side_container.is-open .fold-btn:hover::before, .modal-sidebar > div.is-open .fold-btn:hover::before {
+  opacity: 1;
+}
+nav.body--side_container.is-open .fold-btn .icon, .modal-sidebar > div.is-open .fold-btn .icon {
+  transform: scale(1, 1);
+}
+nav.body--side_container.is-open .fold-btn svg path, .modal-sidebar > div.is-open .fold-btn svg path {
+  fill: color(var(--primary-middle));
+}
+nav.body--side_container.is-open .prof-row .profile-name, .modal-sidebar > div.is-open .prof-row .profile-name {
+  display: block;
+}
+nav.body--side_container.is-open #alertBtn, .modal-sidebar > div.is-open #alertBtn {
+  display: block;
+}
+nav.body--side_container.is-open .menu-1 > li > .modal-menu-container, .modal-sidebar > div.is-open .menu-1 > li > .modal-menu-container {
+  left: calc(clamp(140px, 15%, 200px) + var(--margin) * 2);
+}
+nav.body--side_container .menu-1, .modal-sidebar > div .menu-1 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: visible;
+  scroll-behavior: smooth;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+nav.body--side_container .menu-1::-webkit-scrollbar, .modal-sidebar > div .menu-1::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+nav.body--side_container .menu-1::-webkit-scrollbar-track, .modal-sidebar > div .menu-1::-webkit-scrollbar-track {
+  background: transparent;
+}
+nav.body--side_container .menu-1::-webkit-scrollbar-thumb, .modal-sidebar > div .menu-1::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+nav.body--side_container .menu-1::-webkit-scrollbar-thumb:hover, .modal-sidebar > div .menu-1::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+nav.body--side_container .menu-1 > li.is-open button, .modal-sidebar > div .menu-1 > li.is-open button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 4px solid var(--primary-middle);
+  margin-left: -4px;
+  width: calc(100% + 4px);
+}
+nav.body--side_container .menu-1 > li.is-open button::before, .modal-sidebar > div .menu-1 > li.is-open button::before {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  opacity: 1;
+}
+nav.body--side_container .menu-1 > li.is-open > .modal-menu-container, .modal-sidebar > div .menu-1 > li.is-open > .modal-menu-container {
+  display: flex;
+}
+nav.body--side_container .menu-1 .btn-l, .modal-sidebar > div .menu-1 .btn-l {
+  flex-shrink: 1;
+  min-height: var(--size-xl);
+}
+nav.body--side_container .menu-1 .btn-fixed-label, .modal-sidebar > div .menu-1 .btn-fixed-label {
+  opacity: 0;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container, .modal-sidebar > div .menu-1 > li > .modal-menu-container {
+  position: fixed;
+  top: calc(var(--margin) - var(--size-xxxs) + var(--size-xxxl) + var(--margin));
+  bottom: calc(var(--margin) - var(--size-xxxs));
+  left: calc(var(--sidebar-width) + var(--margin) * 2);
+  width: calc((100vw - var(--margin) * 4 - var(--sidebar-width) - var(--right-sidebar-width)) * 0.75);
+  overflow-y: scroll;
+  padding: calc(var(--margin) - var(--size-xxxs)) var(--margin) var(--margin);
+  display: none;
+  flex-wrap: wrap;
+  gap: var(--size-xxl);
+  scroll-behavior: smooth;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  z-index: 1000;
+  background: var(--color-background);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container::-webkit-scrollbar, .modal-sidebar > div .menu-1 > li > .modal-menu-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container::-webkit-scrollbar-track, .modal-sidebar > div .menu-1 > li > .modal-menu-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container::-webkit-scrollbar-thumb, .modal-sidebar > div .menu-1 > li > .modal-menu-container::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container::-webkit-scrollbar-thumb:hover, .modal-sidebar > div .menu-1 > li > .modal-menu-container::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container, nav.body--side_container .menu-1 > li > .modal-menu-container ul, .modal-sidebar > div .menu-1 > li > .modal-menu-container, .modal-sidebar > div .menu-1 > li > .modal-menu-container ul {
+  list-style: none;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container > *, .modal-sidebar > div .menu-1 > li > .modal-menu-container > * {
+  width: calc((100% - var(--size-xxl) * 4) / 5);
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container h4, .modal-sidebar > div .menu-1 > li > .modal-menu-container h4 {
+  color: var(--primary-middle);
+  margin-bottom: var(--margin);
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container a:not(.icon), .modal-sidebar > div .menu-1 > li > .modal-menu-container a:not(.icon) {
+  padding: 0.3em 0;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container ul > li:hover, .modal-sidebar > div .menu-1 > li > .modal-menu-container ul > li:hover {
+  background: var(--grayscale-75);
+  width: 100%;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container > li > ul > li, .modal-sidebar > div .menu-1 > li > .modal-menu-container > li > ul > li {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-flow: inherit;
+  justify-content: space-between;
+  gap: 0;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container > li > ul > li a, .modal-sidebar > div .menu-1 > li > .modal-menu-container > li > ul > li a {
+  overflow-wrap: anywhere;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container > li > ul > li .icon, .modal-sidebar > div .menu-1 > li > .modal-menu-container > li > ul > li .icon {
+  flex-shrink: 0;
+}
+nav.body--side_container .menu-1 > li > .modal-menu-container > li > ul > li .icon svg path, .modal-sidebar > div .menu-1 > li > .modal-menu-container > li > ul > li .icon svg path {
+  fill: var(--grayscale-40);
+}
+nav.body--side_container .menu-2, .modal-sidebar > div .menu-2 {
+  order: 2;
+  background: var(--color-background);
+  border-radius: var(--rounded-button);
+}
+nav.body--side_container .menu-2 button, .modal-sidebar > div .menu-2 button {
+  padding: var(--size-xxxs);
+}
+nav.body--side_container .menu-2 .btn-primary-s, .modal-sidebar > div .menu-2 .btn-primary-s {
+  height: var(--size-xxxl);
+}
+
+nav {
+  scroll-behavior: smooth;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+nav::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+nav::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+nav::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+.body--container nav.body--side_container {
+  max-height: calc(100% - var(--size-xxxl));
+}
+
+.body--container .sidebar:not(.is-open) .fold-btn {
+  display: none;
+}
+
+.logo-row {
+  width: 100%;
+  height: var(--size-xxxl);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.logo-row > * {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.logo-row .logo {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--size-xxxl);
+  display: flex;
+  width: calc(var(--size-xxxl) * 2.9913 * 0.2583488);
+}
+.logo-row .logo > div:first-child {
+  width: 0;
+}
+.logo-row .logo > div:last-child {
+  width: 100%;
+}
+.logo-row .fold-btn {
+  width: var(--size-xs);
+  height: var(--size-xxxl);
+  position: fixed;
+  padding-left: 0;
+  padding-right: 0;
+  top: calc(var(--margin) - var(--size-xxxs) + 2px);
+  left: calc(var(--size-xxxl) + var(--margin) + 4px);
+  background: var(--primary-middle);
+  border-radius: 100px;
+}
+.logo-row .fold-btn .icon {
+  transform: scale(-1, 1);
+}
+.logo-row .fold-btn svg path {
+  fill: var(--color-invert);
+}
+
+.prof-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.prof-row .profile-name {
+  display: none;
+}
+.prof-row > li {
+  display: flex;
+  align-items: center;
+  gap: var(--size-xs);
+}
+.prof-row > li:first-child {
+  flex: 1;
+  padding-right: var(--size-m1);
+}
+.prof-row .mymenu-btn {
+  background-position: center;
+  background-size: cover;
+  border-radius: 100px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.prof-row .btn-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--color-invertStroke);
+  color: var(--color-invert);
+  font-size: 10px;
+  padding: 2px;
+}
+.prof-row .profile-name {
+  flex: 1;
+  overflow: hidden;
+}
+.prof-row .group-menu-container {
+  position: absolute;
+  display: none;
+  top: 100%;
+  z-index: 100;
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  background: var(--color-background);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  width: 100%;
+  padding: var(--margin);
+}
+.prof-row .group-menu-container a {
+  display: block;
+  padding: var(--size-xxxs) 0;
+}
+.prof-row .group-menu-container.alert-list {
+  top: 0;
+  left: calc(100% + var(--margin));
+  min-width: 200px;
+}
+.prof-row > li.is-open .group-menu-container {
+  display: block;
+}
+
+#alertBtn {
+  display: none;
+}
+#alertBtn .icon {
+  margin-right: 0;
+}
+
+.badge {
+  width: var(--size-m2);
+  height: var(--size-m2);
+  background: var(--color-error);
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 100px;
+  transform: translate(50%, -50%);
+  color: var(--color-invert);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-sidebar > div {
+  --sidebar-width: clamp(140px, 15%, 200px);
+}
+.modal-sidebar > div .btn-fixed-label {
+  opacity: 1 !important;
+}
+.modal-sidebar > div .logo-row .logo {
+  width: calc(var(--size-xxxl) * 2.9913);
+  top: 0;
+  left: 0;
+  transform: none;
+}
+.modal-sidebar > div .logo-row .logo > div:first-child {
+  width: 74.16512%;
+}
+.modal-sidebar > div .logo-row .logo > div:last-child {
+  width: 25.83488%;
+}
+.modal-sidebar > div .fold-btn {
+  position: absolute;
+  left: unset;
+  right: 0;
+  top: 0;
+  width: var(--size-xxxl);
+  border-radius: var(--rounded-button);
+  cursor: pointer;
+  background: var(--color-background);
+  border: var(--color-stroke);
+}
+.modal-sidebar > div .fold-btn::before {
+  border-radius: var(--rounded-button);
+  content: "";
+  position: absolute;
+  background: var(--color-background);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--color-stroke);
+  opacity: 0;
+  transition: 0.25s all ease-in-out;
+}
+.modal-sidebar > div .fold-btn:hover::before {
+  opacity: 1;
+}
+.modal-sidebar > div .fold-btn .icon {
+  transform: scale(1, 1);
+}
+.modal-sidebar > div .fold-btn svg path {
+  fill: color(var(--primary-middle));
+}
+.modal-sidebar > div #alertBtn {
+  display: block;
+}
+.modal-sidebar > div .menu-1 > li > .modal-menu-container {
+  left: calc(clamp(140px, 15%, 200px) + var(--margin) * 2);
+}
+
+.modal-sidebar {
+  position: fixed;
+  top: 0;
+  left: calc(clamp(140px, 15%, 200px) * -1 - var(--margin) * 3);
+  transition: 0.4s left ease-in-out;
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: var(--color-background);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  height: 100%;
+  padding: calc(var(--margin) - var(--size-xxs)) var(--margin);
+}
+.modal-sidebar > * {
+  width: 100%;
+}
+.modal-sidebar .fold-btn .icon {
+  transform: scale(-1, 1) !important;
+}
+.modal-sidebar nav {
+  width: 100%;
+}
+.modal-sidebar.is-active {
+  left: 0;
+}

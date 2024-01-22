@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ERP System</title>
+  <link rel="stylesheet" href="{% static 'css/style/style.css' %}">
+  <!--axios cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <!-- 일반 자바스크립트 코드 입력 -->
+    <script src="{% static 'js/base.js' %}"></script>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    {% block extra_js %}{% endblock extra_js %}
+</head>
+<body>
+{% csrf_token %}
+  {% include 'nav.html' %}
+  <div class="container">
+    {% include 'module/../sidebar/templates/sidebar.html' %}
+    {% block content %}{% endblock content %}
+    {% include 'quickmenu.html' %}
+  </div>
+  {% include 'module/../footer/templates/footer/footer.html' %}
+</body>
+</html>

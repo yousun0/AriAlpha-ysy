@@ -1,0 +1,443 @@
+@import "../style/mixin";
+
+:root{
+  --sidebar-width: var(--size-xxxl);
+}
+// nav.modal--side_container{
+//   display: none;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: clamp(calc(140px + var(--margin)), calc(15% + var(--margin)), calc(200px + var(--margin)));
+//   padding: var(--margin);
+//   padding-right: 0;
+// }
+//----------------- 메인사이드바 -----------------//
+
+
+nav.body--side_container, .modal-sidebar >div{
+  flex-shrink: 0;
+  width: var(--sidebar-width);
+  max-height: 100%;
+  user-select: none;
+  @include flexCol;
+
+  transition: 0.4s width ease-in-out;
+  
+  &,.menu-1{
+    gap: var(--size-xs);
+  }
+
+  a, a:link, a:visited{
+    color: var(--color-text);
+  }
+
+  ul,li{
+    list-style: none;
+
+  }
+  &:not(.is-open){
+    button{
+      padding: var(--size-xxxxs);
+    }
+  }
+
+  &.is-open{
+    --sidebar-width: clamp(140px, 15%, 200px);
+
+    .btn-fixed-label{
+      opacity: 1 !important;
+    }
+    .logo-row .logo{
+      width: calc(var(--size-xxxl) * 2.9913);
+      top: 0;
+      left: 0;
+      transform: none;
+      >div:first-child{
+        width: 74.16512%;
+      }
+      >div:last-child{
+        width: 25.83488%;
+      }
+    }
+    .fold-btn{
+      position: absolute;
+      left: unset;
+      right: 0;
+      top: 0;
+      width: var(--size-xxxl);
+      @include button;
+      background: var(--color-background);
+      border: var(--color-stroke);
+      
+      .icon{
+        transform: scale(1, 1);
+      }
+
+      svg path{
+        fill: color(var(--primary-middle));
+      }
+    }
+    
+    .prof-row .profile-name {
+      display: block;
+    }
+    #alertBtn{
+      display: block;
+    }
+
+    .menu-1 >li >.modal-menu-container{
+      left: calc(clamp(140px, 15%, 200px) + var(--margin) * 2);
+    }
+  }
+  
+  .menu-1{
+    display: flex;
+    flex-direction: column;
+    // height: calc(100% - var(--size-xxxl) * 3);
+    height: 100%;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: visible;
+    @include scrollHide;
+
+    >li.is-open{
+      button{
+        @include roundedL(0px);
+        border-left: 4px solid var(--primary-middle);
+        margin-left: -4px;
+        width: calc(100% + 4px);
+        
+        &::before{
+          @include roundedL(0px);
+          opacity: 1;
+        }
+      }
+      >.modal-menu-container{
+        display: flex;
+      }
+
+    }
+    .btn-l{
+      flex-shrink: 1;
+      min-height: var(--size-xl);
+    }
+
+    .btn-fixed-label{
+      opacity: 0;
+    }
+
+    >li >.modal-menu-container{
+      position: fixed;
+      top:calc(var(--margin) - var(--size-xxxs) + var(--size-xxxl) + var(--margin));
+      bottom: calc(var(--margin) - var(--size-xxxs));
+      left: calc(var(--sidebar-width) + var(--margin) * 2);
+      width: calc((100vw - var(--margin) * 4 - var(--sidebar-width) - var(--right-sidebar-width) )* 0.75);
+      overflow-y: scroll;
+      padding: calc(var(--margin) - var(--size-xxxs) ) var(--margin) var(--margin);
+      display: none;
+      flex-wrap: wrap;
+      gap: var(--size-xxl);
+      @include scrollHide;
+      // transition: 0.4s all ease-in-out;
+      
+      z-index: 1000;
+      @include bg-blur;
+      @include modalBox;
+      &,ul{
+        list-style: none;
+      }
+
+      >*{
+        width: calc((100% - var(--size-xxl) * 4) / 5);
+      }
+
+      h4{
+        color: var(--primary-middle);
+        margin-bottom: var(--margin);
+      }
+
+      a:not(.icon){
+        padding: 0.3em 0;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      ul >li:hover{
+        background: var(--grayscale-75);
+        width: 100%
+      }
+
+
+      >li >ul >li{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-flow: inherit;
+        justify-content: space-between;
+        gap: 0;
+        a{
+          overflow-wrap: anywhere;
+        }
+
+        .icon{
+          flex-shrink: 0;
+          svg path{
+            fill: var(--grayscale-40);
+          }
+        };
+      }
+    }
+  }
+
+  .menu-2{
+    order: 2;
+    background: var(--color-background);
+    @include rounded(var(--rounded-button));
+    button{
+      padding: var(--size-xxxs);
+    }
+    .btn-primary-s{
+      height: var(--size-xxxl);
+    }
+  }
+
+}
+
+nav{
+  
+  @include scrollHide;
+}
+
+.body--container nav.body--side_container{
+  max-height: calc(100% - var(--size-xxxl));
+}
+.body--container .sidebar:not(.is-open) .fold-btn{
+  display: none;
+}
+
+
+.logo-row{
+  width: 100%;
+  height: var(--size-xxxl);
+  flex-shrink: 0;
+  cursor: pointer;
+
+  >*{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .logo{
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--size-xxxl);
+    display: flex;
+    width: calc(var(--size-xxxl) * 2.9913 * 0.2583488);
+    >div:first-child{
+      width: 0;
+    }
+    >div:last-child{
+      width: 100%;
+      // width: var(--size-xxxl);
+    }
+  }
+
+  .fold-btn{
+    
+    // right: -3rem;
+    width: var(--size-xs);
+    height: var(--size-xxxl);
+    position: fixed;
+    @include pd-x(0);
+    top: calc(var(--margin) - var(--size-xxxs) + 2px);
+    left: calc(var(--size-xxxl) + var(--margin) + 4px);
+
+    .icon{
+      transform: scale(-1, 1);
+    }
+
+    background: var(--primary-middle);
+    @include rounded(100px);
+
+    svg path{
+      fill: var(--color-invert);
+    }
+    
+  }
+}
+
+.prof-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .profile-name {
+    display: none;
+  }
+
+  >li{
+    display: flex;
+    align-items: center;
+    gap: var(--size-xs);
+  }
+  >li:first-child{
+    flex: 1;
+    padding-right: var(--size-m1);
+  }
+
+  .mymenu-btn{
+    background-position: center;
+    background-size: cover;
+    @include rounded(100px);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .btn-info{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--color-invertStroke);
+    color: var(--color-invert);
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  .profile-name{
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .group-menu-container{
+    position: absolute;
+    display: none;
+    top: 100%;
+    z-index: 100;
+    @include modalBox;
+    @include bg-blur;
+    width: 100%;
+    padding: var(--margin);
+  
+    a{
+      display: block;
+      padding: var(--size-xxxs) 0;
+    }
+
+    &.alert-list{
+      top: 0;
+      left: calc(100% + var(--margin)); 
+      min-width: 200px;
+
+    }
+  }
+
+  >li.is-open .group-menu-container{
+    display: block;
+  }
+}
+
+#alertBtn{
+  display: none;
+  .icon{
+    margin-right: 0;
+  }
+}
+
+.badge{
+  width: var(--size-m2);
+  height: var(--size-m2);
+  background: var(--color-error);
+  position: absolute;
+  right: 0;
+  top: 0;
+  @include rounded(100px);
+  transform: translate(50%, -50%);
+  color: var(--color-invert);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-sidebar >div{
+  --sidebar-width: clamp(140px, 15%, 200px);
+
+  .btn-fixed-label{
+    opacity: 1 !important;
+  }
+  .logo-row .logo{
+    width: calc(var(--size-xxxl) * 2.9913);
+    top: 0;
+    left: 0;
+    transform: none;
+    >div:first-child{
+      width: 74.16512%;
+    }
+    >div:last-child{
+      width: 25.83488%;
+    }
+  }
+  .fold-btn{
+    position: absolute;
+    left: unset;
+    right: 0;
+    top: 0;
+    width: var(--size-xxxl);
+    @include button;
+    background: var(--color-background);
+    border: var(--color-stroke);
+    
+    .icon{
+      transform: scale(1, 1);
+    }
+
+    svg path{
+      fill: color(var(--primary-middle));
+    }
+  }
+  
+
+  #alertBtn{
+    display: block;
+  }
+
+  .menu-1 >li >.modal-menu-container{
+    left: calc(clamp(140px, 15%, 200px) + var(--margin) * 2);
+  }
+}
+
+
+.modal-sidebar{
+  position: fixed;
+  top: 0;
+  left: calc(clamp(140px, 15%, 200px) * -1 - var(--margin) * 3);
+  transition: 0.4s left ease-in-out;
+  @include modalBox;
+  @include roundedL(0);
+  @include bg-blur;
+  height: 100%;
+  padding: calc(var(--margin) - var(--size-xxs)) var(--margin);
+
+  >*{
+    width: 100%;
+  }
+
+  .fold-btn .icon{
+    transform: scale(-1, 1) !important;
+  }
+
+  nav{
+    width: 100%;
+  }
+
+  &.is-active{
+    left: 0;
+  }
+}

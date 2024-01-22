@@ -1,0 +1,77 @@
+@import "../style/mixin";
+
+:root{
+  --right-sidebar-width: 40px;
+}
+
+
+.contents--side_container{
+  flex-shrink: 0;
+  transition: 0.4s width ease-in-out;
+  width: var(--right-sidebar-width);
+  max-height: 100%;
+  @include flexCol;
+  user-select: none;
+  
+  >div{
+    @include rounded(var(--rounded-box));
+    @include modalBox;
+    margin-bottom: var(--margin);
+    overflow: hidden;
+    
+    &:last-child{
+      margin-bottom: 0;
+      // max-height: calc(100% - var(--size-xxxl) - var(--margin));
+      overflow: hidden scroll;
+      @include scrollHide;
+      flex: 1;
+    }
+
+    button{
+      width: 100%;
+    }
+  }
+  
+  .btn-icon >*:not(.icon-circle){
+    @include preline;
+  }
+  &.is-open{
+    --right-sidebar-width: clamp(100px, 15%, 150px);
+  }
+
+  &.is-open .btn-icon .icon-circle{
+    margin-right: var(--size-s);
+  }
+
+  &:not(.is-open) .btn-icon{
+    justify-content: center;
+    >*:not(.icon-circle){
+      display: none;
+    }
+  }
+
+  .sp2{
+    &,&:visited, &:link{
+      color: inherit;
+    }
+  }
+}
+
+@media screen and (max-width: $screen_l){
+  .contents--side_container{
+    width: 100%;
+    flex-direction: row;
+    gap: var(--margin);
+
+    >div{
+      margin-bottom: 0;
+    }
+    > div.sidemenu-menu1{
+      max-width: 100%;
+      max-height: unset;
+      display: flex;
+      height: var(--size-xxxl);
+      overflow: scroll hidden;
+    }
+  }
+}

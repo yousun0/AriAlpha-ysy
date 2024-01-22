@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<nav class="sidebar body--side_container is-open"  id="moduleContent">
+  <div class="logo-row">
+    <div>
+      <div class="logo ">
+        <div>
+          <svg class="fill-primary-middle" viewBox="0 0 192.05949 86.46508"><path d="m46.16485,79.58748c0,4.5906-.7716,5.2464-5.2723,5.37749h-9.9017c-3.7292,0-4.3721-.7869-4.5007-4.5906v-18.8871h-6.4297v18.756c0,3.8036-1.0287,4.8529-4.7579,4.8529H5.65805c-4.88649,0-5.65805-.787-5.65805-5.6399V25.41818C0,19.77828,2.67086,0,23.4682,0s22.31085,19.90938,22.43945,24.36888c.3857,9.0501.2572,45.775.2572,55.2186v.00002ZM26.49015,22.00798c0-2.0986-1.0288-3.279-3.0863-3.279s-3.0862,1.3116-3.0862,3.279v21.5103h6.3011v-21.5103s-.1286,0-.1286,0Zm48.608,57.186c0,4.8529-.77151,5.771-5.5295,5.771h-10.2874c-3.3434,0-4.5007-1.1804-4.5007-4.4594,0-19.4118-.5144-38.9547.1286-58.3664.6429-17.96904,16.5884-25.83866,31.5052-20.7234,8.8728,3.1478,13.32721,9.46437,14.4028,18.7559,1.07559,9.29153,1.44853,22.95312-3.987,28.593-2.5717,2.4921-4.44798.78328-2.8288,4.9841,2.5718,6.5581,9.2588,24.1336,9.3868,24.7894,1.54401,5.3776.772,6.4268-4.629,6.4268h-10.2873c-2.3147,0-3.5578-.7869-4.3294-3.01669-2.3146-6.8203-8.0155-22.42841-8.27269-23.3465h-.7716v20.5922h-.00002Zm-.02301-43.18872c.00955,1.92764,1.84266,3.39183,3.69739,2.86658,1.52486-.43184,2.06537-1.40336,1.98371-3.48546v-13.903c0-4.853-5.5295-4.04876-5.5295-.3935-.17386,4.07851-.17143,10.91401-.1516,14.91538Zm55.704,43.97561c0,4.4595-.515,4.9841-5.015,4.9841h-10.28799c-2.957,0-4.11501-1.3116-4.243-4.0659V7.58028c0-5.63986.64301-6.29566,6.043-6.29566h8.359c4.62901,0,5.272.6558,5.272,5.24646,0,12.19799-.12801,61.16445-.12801,73.44979Zm55.54166-.39339c0,4.5906-.77161,5.2464-5.27229,5.37749h-9.9017c-3.7292,0-4.3721-.7869-4.5007-4.5906v-18.8871h-6.4297v18.756c0,3.8036-1.0287,4.8529-4.7579,4.8529h-9.6445c-4.88649,0-5.65805-.787-5.65805-5.6399V25.41818c0-5.6399,2.67085-25.41818,23.4682-25.41818s22.31085,19.90938,22.43945,24.36888c.3857,9.0501.2572,45.775.2572,55.2186Zm-19.6747-57.5795c0-2.0986-1.02879-3.279-3.0863-3.279s-3.0862,1.3116-3.0862,3.279v21.5103h6.3011v-21.5103h-.1286Z" /></svg>
+        </div>
+        <div>
+          <svg class="fill-primary-middle alpha-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.95159 86.85295"><path d="m66.95159,23.37259c-5.11426-.20893-8.79646-.05764-12.90515.40988-1.50671,1.44915-4.04579,7.01915-4.84035,9.45048C39.69467,19.5825,10.84385,16.85885,1.92892,43.09336c-5.74585,20.43791,1.92081,34.82969,15.37109,41.68929,6.19226,3.15791,18.35957,2.79107,25.28471-1.7076,2.38162-1.5469,4.4877-3.1786,6.62138-6.21315.66226,2.56625,3.17821,9.31993,3.84045,9.31993h13.58243c-10.23055-21.31163-6.96063-49.2821.3226-62.80923Zm-36.23497,49.97754c-8.21767,0-14.0219-7.6026-14.0219-18.29964s5.86137-18.78514,14.0219-18.82324c9.36473-.04374,14.02206,8.1264,14.02206,18.82324s-5.80444,18.29964-14.02206,18.29964Z" /></svg>
+        </div>
+      </div>
+    </div>
+    <button class="fold-btn body--side_btn btn-l bg-transparent" id="bodySideFoldBtn">
+      <div class="icon size-m3">
+        <svg viewBox="0 0 16 16" class="fill-primary-middle">
+          <path d="M7.8,1.4c0.4,0.3,0.4,0.8,0.1,1.2L3.1,8l4.7,5.4c0.3,0.4,0.3,0.9-0.1,1.2c-0.4,0.3-0.9,0.3-1.2-0.1l-5.2-6
+            c-0.3-0.3-0.3-0.8,0-1.1l5.2-6C6.9,1.1,7.4,1,7.8,1.4z M13,1.4c0.4,0.3,0.4,0.8,0.1,1.2L8.3,8l4.7,5.4c0.3,0.4,0.3,0.9-0.1,1.2
+            c-0.4,0.3-0.9,0.3-1.2-0.1l-5.2-6c-0.3-0.3-0.3-0.8,0-1.1l5.2-6C12.1,1.1,12.6,1,13,1.4z"/>
+        </svg>
+      </div>
+    </button>
+  </div>
+  <ul class="prof-row">
+    <!-- 프로필 사진 -->
+    <li>
+      <button class="mymenu-btn size-xxxl" style="background-image:url({% static "assets/img/profile.png" %})">
+        <span class="btn-info">메뉴</span>
+      </button>
+      <h4 class="profile-name "><span>아리아님</span></h4>
+
+      <div class="group-menu-container">
+        <ul>
+          <li><a href="/tab/mypage.html" data-tab-trigger="mypage">나의 정보</a></li>
+          <li><a href="{% static 'templates/home/modal/change-password.html' %}" data-modal-trigger="change-password">비밀번호 변경</a></li>
+          <li><a>로그아웃</a></li>
+          <li><a>고객센터 1544-1004</a></li>
+        </ul>
+      </div>
+    </li>
+    <!-- 알림버튼 -->
+    <li>
+      <button class="btn-l" id="alertBtn">
+        <div class="icon size-xl lottie-icon lottie-fill-primary-middle" data-icon="alert"></div>
+        <div class="badge">4</div>
+      </button>
+
+      <div class="group-menu-container alert-list">
+        <ul>
+          <li><a  href="" data-modal-trigger="" data-modal-type="popup">새로운 공지사항</a></li>
+          <li><a  href="" data-modal-trigger="" data-modal-type="popup">릴리즈 노트</a></li>
+          <li><a  href="" data-modal-trigger="" data-modal-type="popup">오늘의 일정</a></li>
+          <li><a  href="" data-modal-trigger="" data-modal-type="popup">오늘의 일정</a></li>
+        </ul>
+      </div>
+    </li>
+   
+  </ul>
+  <ul class="menu-1">
+    <li>
+      <button class="btn-primary-s w-full btn-icon" id="fileDriveBtn">
+      <div class="icon size-xxl lottie-icon lottie-fill-primary-middle" data-icon="fileDrive"></div>
+      <p class="weight-500">자료전송</p>
+      </button>
+    </li>
+    <li>
+      <button class="btn-l w-full btn-icon " id="timerBtn">
+        <div class="icon size-xxl lottie-icon lottie-fill-primary-middle" data-icon="timer"></div>
+        <p class="weight-500" id="authTimer">02:15:26</p>
+        <span class="btn-fixed-label" id="plusTimerBtn">연장</span>
+      </button>
+    </li>
+  <!-- 메뉴 -->
+  <div class="menu-2">
+    <li>
+      <button class="w-full btn-icon" id="fileDriveBtn">
+      <div class="icon size-xxl lottie-icon lottie-fill-primary-middle" data-icon="information"></div>
+      <p class="weight-500">업무매뉴얼</p>
+      </button>
+    </li>
+    <li>
+      <button class="w-full btn-icon" id="fileDriveBtn">
+      <div class="icon size-xxl lottie-icon lottie-fill-primary-middle" data-icon="logout"></div>
+      <p class="weight-500">로그아웃</p>
+      </button>
+    </li>
+  </div>
+  </ul>
+  
+</nav>
+</body>
+</html>

@@ -1,0 +1,172 @@
+.modal {
+  z-index: 1001;
+  scroll-behavior: smooth;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  padding: var(--size-m3) var(--size-xl);
+}
+.modal::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.modal::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+.modal h3, .modal form, .modal > div {
+  margin-bottom: var(--margin);
+}
+.modal * {
+  position: relative;
+  box-sizing: border-box;
+}
+.modal > div {
+  height: 100%;
+}
+
+.change-theme .image-input-holder {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: var(--size-m2);
+}
+.change-theme label {
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+.change-theme label, .change-theme label * {
+  border-radius: var(--rounded-box);
+}
+.change-theme label figure, .change-theme label img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.change-theme label figure {
+  width: 100%;
+  height: 100%;
+}
+.change-theme label figure img {
+  display: block;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  filter: blur(20px);
+}
+.change-theme label input {
+  display: none;
+}
+.change-theme label input[type=radio]:checked ~ figure::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--primary-middle);
+  border-radius: var(--rounded-box);
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.change-complex form {
+  display: flex;
+}
+.change-complex form input {
+  width: 50%;
+}
+.change-complex form input:last-of-type {
+  margin-right: var(--size-m1);
+}
+.change-complex .label-title, .change-complex input, .change-complex .btn-primary-l {
+  margin-bottom: 0;
+}
+.change-complex .change-complex-result {
+  border-radius: var(--rounded-box);
+  border: 1px solid var(--grayscale-60);
+  min-height: 30vh;
+  margin-bottom: var(--margin);
+}
+
+.change-password form * {
+  width: 100%;
+}
+
+.form-labels > * {
+  display: block;
+  margin-bottom: var(--size-m1);
+}
+
+form > * {
+  margin-bottom: var(--size-xl);
+}
+form h4 {
+  margin-bottom: var(--size-s);
+}
+
+.groupmenu-setting label, .workflowmenu-setting label {
+  cursor: pointer;
+  padding: var(--size-xxxxs);
+  font-size: var(--font-sp);
+  font-weight: 500;
+}
+
+.transfer-container {
+  display: flex;
+  align-items: stretch;
+  gap: var(--size-xxs);
+  user-select: none;
+}
+.transfer-container ul, .transfer-container li, .transfer-container ol {
+  list-style: none;
+}
+.transfer-container h4, .transfer-container input[type=text] {
+  margin-bottom: 0;
+}
+.transfer-container .checkbox-group {
+  margin-left: var(--margin);
+}
+.transfer-container .transfer-controller {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--size-s);
+}
+.transfer-container > *:not(.transfer-controller) {
+  flex: 1;
+  gap: var(--size-s);
+  display: flex;
+  flex-direction: column;
+}
+.transfer-container > *:not(.transfer-controller) > * {
+  width: 100%;
+}
+.transfer-container > *:not(.transfer-controller) > ul {
+  flex: 1;
+  background: var(--color-invertBackground);
+  border: 1px solid var(--color-invertStroke);
+  padding: var(--size-s) var(--size-m1);
+  border-radius: var(--rounded-button);
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+.transfer-container > *:not(.transfer-controller) > ul > li.checkbox-group {
+  margin-left: 0;
+}
+.transfer-container > *:not(.transfer-controller) > ul label {
+  cursor: pointer;
+  padding: var(--size-xxxxs);
+  font-size: var(--font-sp);
+  font-weight: 500;
+}
+.transfer-container > *:not(.transfer-controller) > ul .master-checkbox ~ p {
+  font-size: var(--font-sp);
+  font-weight: 650;
+}

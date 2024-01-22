@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko-KR" class="mode-light header-info-open">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='theme-color' content='#000' />
+  <meta name='color-scheme' content='light' />
+{#  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">#}
+  <link rel="icon" type="image/svg+xml" href="{% static 'assets/favicon.svg' %}">
+  <link rel="icon" type="image/png" href="{% static 'assets/favicon.png' %}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/apple-icon-57x57.png' %}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/apple-icon-60x60.png' %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/apple-icon-72x72.png' %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/apple-icon-76x76.png' %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/apple-icon-114x114.png' %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/apple-icon-120x120.png' %}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/apple-icon-144x144.png' %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/apple-icon-152x152.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/apple-icon-180x180.png' %}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'assets/android-icon-192x192.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'assets/favicon-96x96.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'assets/manifest.json' %}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{% static 'assets/ms-icon-144x144.png' %}">
+  <meta name="theme-color" content="#ffffff">
+  <!-- <meta name='supported-color-schemes' content='light dark' /> -->
+  <meta id='status-bar' name='theme-color' content='#000' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css">
+  <link rel="stylesheet" href="{% static 'css/style/style.css' %}">
+  <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/inputs.js' %}"></script>
+  <!-- 데이터 -->
+  <script src="{% static 'data/data.js' %}"></script>
+  <script src="{% static 'data/memoData.js' %}"></script>
+  <script src="{% static 'data/faq.js' %}"></script>
+  <script src="{% static 'data/schedules.js' %}"></script>
+  <script src="{% static 'data/animationData.js' %}"></script>
+  
+  <script src="{% static 'data/nav.js' %}"></script>
+
+  <!-- Lib -->
+  <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@2/dist/tinymce-webcomponent.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="{% static 'js/base.js' %}"></script>
+  <title>이노라온</title>
+</head>
+<body>
+{% csrf_token %}
+  <!-- 화면 영역 -->
+  <div class="fx-full bg-blur"></div>
+  <main class="body--container">
+    <div data-module="sidebar"></div>
+    <div class="body--main_container">
+      <!-- 상단바 -->
+      <div data-module="header"></div>
+      <!-- 메인 콘텐츠 -->
+      <div class="main--contents_container">
+        <main class="contents--inner_container">
+          <div data-tab="dashboard" class="tab-container"></div>
+        </main>
+        <!-- 사이드 메뉴 -->
+        <div data-module="fastmenu"></div>
+      </div>
+      
+    </div>
+    <div data-module="footer"></div>
+  </main>
+  <div class="modal-sidebar">
+    <div data-module="sidebar" ></div>
+  </div>
+  
+  <script src="{% static 'js/draw.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

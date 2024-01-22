@@ -1,0 +1,6 @@
+Django==4.2.9
+pyodbc
+mssql-django
+django-environ
+gunicorn
+uvicorn

@@ -1,0 +1,133 @@
+.login {
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.step {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.step > div {
+  width: 100%;
+}
+.step.active {
+  display: flex;
+}
+
+form {
+  display: block;
+  width: 100%;
+}
+
+.login-container {
+  display: flex;
+  height: clamp(680px, 80vh, 80vh);
+  width: 100%;
+  max-width: 1600px;
+  max-height: 900px;
+  padding: var(--size-xxxl);
+  gap: var(--size-l);
+}
+.login-container > div {
+  width: 50%;
+}
+.login-container > div:last-child {
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  border-radius: 24px;
+}
+.login-container .preview-contents-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-m1) var(--size-m2);
+}
+.login-container .preview-contents-container > div {
+  width: calc(50% - var(--size-m2));
+  height: calc(33.3% - var(--size-m1));
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  border-radius: 24px;
+  padding: var(--size-m3);
+}
+.login-container .preview-contents-container > div h2 {
+  color: var(--primary-middle);
+  margin-bottom: var(--size-xxs);
+}
+.login-container .preview-contents-container > div p {
+  line-height: 1.44;
+}
+.login-container .preview-contents-container > div .icon {
+  position: absolute;
+  right: var(--size-s);
+  bottom: 4px;
+  width: 35%;
+}
+.login-container .preview-contents-container > div .icon svg path {
+  fill: var(--primary-middle);
+}
+.login-container .login-form-container {
+  padding: var(--size-xxxl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-l);
+}
+.login-container form {
+  flex: 1;
+}
+.login-container .login-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 250px;
+}
+.login-container .login-title p, .login-container .login-title h4, .login-container .login-title h3 {
+  margin-bottom: var(--size-l);
+}
+.login-container .login-title svg path {
+  fill: var(--primary-middle);
+}
+.login-container .title-logo {
+  width: 80%;
+}
+.login-container #loginForm label input:not([type=checkbox], [type=radio]) {
+  width: 100%;
+}
+.login-container input[type=button], .login-container .label--input-text, .login-container .label--input-flex {
+  margin-bottom: var(--margin);
+}
+.login-container input[type=button], .login-container .label--input-text {
+  display: block;
+}
+
+input.bg-primary-middle {
+  color: var(--color-invert);
+  font-weight: 650;
+}
+
+.input-time-container {
+  display: flex;
+  gap: var(--margin);
+}
+.input-time-container > div {
+  flex: 1;
+}
+.input-time-container .time {
+  color: var(--primary-middle);
+  position: absolute;
+  right: var(--margin);
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: var(--font-p);
+  font-weight: 500;
+}

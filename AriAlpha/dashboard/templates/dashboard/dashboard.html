@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{% static 'js/util.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/style/style.css' %}../style/style.css">
+  <link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
+  <title>대시보드</title>
+</head>
+<body class="tab-body">
+  <div id="pageContent" class="contents--main_body dashboard">
+    <div>
+      <div class="widget_post-preview">
+        <ul>
+          <li>
+            <div class="post-preview_title">
+              <div class="icon icon-circle bg-primary-middle">
+                <svg viewBox="0 0 16 16" ><path class="fill-invert" fill-rule="evenodd" clip-rule="evenodd" d="M3.7,3.1c0-0.3,0.2-0.5,0.5-0.5h2.4v1.4c0,0.4,0.3,0.7,0.7,0.7h1.7c0.4,0,0.7-0.3,0.7-0.7V2.6l2.2,0 c0.3,0,0.5,0.2,0.5,0.5v10.7c0,0.3-0.2,0.5-0.5,0.5c-2,0-5.7,0-7.7,0c-0.3,0-0.5-0.2-0.5-0.5V3.1z M4.9,6.9c0-0.3,0.2-0.5,0.5-0.5 h5.4c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5H5.4C5.1,7.4,4.9,7.1,4.9,6.9z M4.9,9c0-0.3,0.2-0.5,0.5-0.5h5.4 c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5H5.4C5.1,9.5,4.9,9.3,4.9,9z M4.9,11.1c0-0.3,0.2-0.5,0.5-0.5h3.4 c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5H5.4C5.1,11.6,4.9,11.3,4.9,11.1z M8.7,3.8H7.5V1.2h1.1V3.8z"/></svg>
+              </div>
+              <h4>공지사항</h4>
+              <button>
+                <div class="icon size-m2">
+                  <svg viewBox="0 0 16 16" class="fill-grayscale-40">
+                    <path class="st0" d="M3.5,8.5C3.5,9.3,2.8,10,2,10S0.5,9.3,0.5,8.5S1.2,7,2,7S3.5,7.7,3.5,8.5z M9.5,8.5C9.5,9.3,8.8,10,8,10 S6.5,9.3,6.5,8.5S7.2,7,8,7S9.5,7.7,9.5,8.5z M15.5,8.5c0,0.8-0.7,1.5-1.5,1.5s-1.5-0.7-1.5-1.5S13.2,7,14,7S15.5,7.7,15.5,8.5z"/>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <ul class="post-preview_list">
+              <li>
+                <div class="title">신규 공동주택 통합정보 시스템 출시 안내</div>
+                <div class="date">2023.10.10</div>
+              </li>
+              <li>
+                <div class="title">신규 공동주택 통합정보 시스템 출시 안내</div>
+                <div class="date">2023.10.10</div>
+              </li>
+              <li>
+                <div class="title">신규 공동주택 통합정보 시스템 출시 안내</div>
+                <div class="date">2023.10.10</div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div class="post-preview_title">
+              <div class="icon icon-circle bg-primary-middle">
+                <svg viewBox="0 0 16 16" ><path d="M11.3,0.5c0.4-0.1,0.8,0.2,0.9,0.6l0.6,2.8c0.1,0.4-0.2,0.8-0.6,0.9L9.8,5.3C9.4,5.4,9,5.2,8.9,4.8
+                  C8.8,4.4,9.1,4,9.5,3.9l0.9-0.2C10,3.5,9.6,3.3,9.2,3.2C6.5,2.5,3.8,4.1,3.1,6.8c-0.3,1.1-0.2,2.3,0.2,3.3c0.2,0.4,0,0.8-0.4,1
+                  c-0.4,0.2-0.8,0-1-0.4C1.4,9.4,1.2,7.9,1.6,6.4c0.9-3.5,4.5-5.5,8-4.6c0.5,0.1,0.9,0.3,1.3,0.5l-0.2-0.9C10.7,1,10.9,0.6,11.3,0.5z
+                   M4.7,15.5c-0.4,0.1-0.8-0.2-0.9-0.6l-0.6-2.8c-0.1-0.4,0.2-0.8,0.6-0.9l2.4-0.5c0.4-0.1,0.8,0.2,0.9,0.6c0.1,0.4-0.2,0.8-0.6,0.9
+                  l-0.9,0.2c0.3,0.2,0.7,0.3,1.1,0.5c2.7,0.7,5.4-0.9,6.1-3.5c0.2-0.9,0.2-1.8,0-2.7c-0.1-0.4,0.1-0.8,0.5-0.9
+                  c0.4-0.1,0.8,0.1,0.9,0.5c0.3,1.1,0.4,2.3,0,3.5c-0.9,3.5-4.5,5.5-8,4.6c-0.5-0.1-0.9-0.3-1.3-0.5l0.2,0.9C5.3,15,5.1,15.4,4.7,15.5
+                  z"/></svg>
+              </div>
+              <h4>ERP 업데이트 노트</h4>
+              <button>
+                <div class="icon size-m2">
+                  <svg viewBox="0 0 16 16" class="fill-grayscale-40">
+                    <path class="st0" d="M3.5,8.5C3.5,9.3,2.8,10,2,10S0.5,9.3,0.5,8.5S1.2,7,2,7S3.5,7.7,3.5,8.5z M9.5,8.5C9.5,9.3,8.8,10,8,10 S6.5,9.3,6.5,8.5S7.2,7,8,7S9.5,7.7,9.5,8.5z M15.5,8.5c0,0.8-0.7,1.5-1.5,1.5s-1.5-0.7-1.5-1.5S13.2,7,14,7S15.5,7.7,15.5,8.5z"/>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <ul class="post-preview_list">
+              <li>
+                <div class="title">신규 공동주택 통합정보 시스템 출시 안내</div>
+                <div class="date">2023.10.10</div>
+              </li>
+              <li>
+                <div class="title">신규 공동주택 통합정보 시스템 출시 안내</div>
+                <div class="date">2023.10.10</div>
+              </li>
+              <li>
+                <div class="title">신규 공동주택 통합정보 시스템 출시 안내</div>
+                <div class="date">2023.10.10</div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="no-item">
+          <div class="icon size-xxxl">
+            <svg viewBox="0 0 36 36" class="fill-grayscale-40">
+              <path d="M31.9,17l-12.1-0.2V4.7c0-1-0.8-1.8-1.8-1.8c-1,0-1.8,0.8-1.8,1.8v12.1L4.1,16.6c-1,0-1.8,0.8-1.8,1.8
+	c0,1,0.8,1.8,1.8,1.8l12.1,0.2v12.1c0,1,0.8,1.8,1.8,1.8c1,0,1.8-0.8,1.8-1.8V20.4l12.1,0.2c1,0,1.8-0.8,1.8-1.8
+	C33.7,17.8,32.9,17,31.9,17z"/>
+            </svg>
+          </div>
+          <div>
+            즐겨찾기 설정
+          </div>
+        </div>
+      </div>
+      <div class="widget_profile">
+        <div class="profile-preview">
+          <div class="profile-img" style="background-image:url({% static 'assets/img/profile.png' %})"></div>
+          <div>
+            <h3>아리아님</h3>
+            <h4>부산지사</h4>
+            <button class="btn-quinary"><a href="/tab/mypage.html" data-tab-trigger="mypage">프로필 편집</a></button>
+          </div>
+        </div>
+        <div class="profile--btn">
+          <button class="btn-secondary-s"><a href="/tab/memo.html" data-tab-trigger="memo">나의 메모</a></button>
+          <button class="btn-secondary-s">숨김메뉴 설정</button>
+        </div>
+      </div>
+      
+    </div>
+    <div>
+      <div class="sec-3">
+        <div class="widget_image-swiper"></div>
+        <div class="widget_status">
+          <h3>고지서배송현황</h3> 
+          <h3 class="text-primary-middle">D-31</h3>
+          <p id="billStatusDescription">고지서 발송을 준비중이에요.</p>
+        </div>
+      </div>
+      <div class="sec-4">
+        <div class="widget_calendar ">
+          <div class="month-row">
+            <button class="btn-s rounded bg-primary-middle">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.51152 0.489191C8.80442 0.782079 8.80443 1.25695 8.51154 1.54985L4.06065 6.00091L8.51153 10.4518C8.80442 10.7447 8.80442 11.2196 8.51153 11.5124C8.21864 11.8053 7.74376 11.8053 7.45087 11.5124L2.46967 6.53125C2.17678 6.23836 2.17678 5.76349 2.46966 5.4706L7.45086 0.489211C7.74375 0.196312 8.21862 0.196304 8.51152 0.489191Z" fill="white"/>
+              </svg>                
+            </button>
+            <h4>2023년 12월</h4>
+            <button class="btn-s rounded bg-primary-middle">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.48848 0.489191C3.19558 0.782079 3.19557 1.25695 3.48846 1.54985L7.93935 6.00091L3.48847 10.4518C3.19558 10.7447 3.19558 11.2196 3.48847 11.5124C3.78136 11.8053 4.25624 11.8053 4.54913 11.5124L9.53033 6.53125C9.82322 6.23836 9.82322 5.76349 9.53034 5.4706L4.54914 0.489211C4.25625 0.196312 3.78138 0.196304 3.48848 0.489191Z" fill="white"/>
+                </svg>                               
+            </button>
+          </div>
+          <a class="more-btn" href="/tab/calendar.html" data-tab-trigger="calendar">펼쳐보기</a>
+          <div class="week-row">
+            <table class="cal-table">
+              <tr class="week">
+                <td>일</td>
+                <td>월</td>
+                <td>화</td>
+                <td>수</td>
+                <td>목</td>
+                <td>금</td>
+                <td>토</td>
+              </tr>
+              <tr>
+                <td class="past"><span>29</span></td>
+                <td class="past"><span>30</span></td>
+                <td class="past"><span>31</span></td>
+                <td class="today"><span>1</span></td>
+                <td><span>2</span></td>
+                <td><span>3</span></td>
+                <td><span>4</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="widget_todo">
+          <div class="title-row">
+            <h4>나의 할 일</h4>
+            <a class="more-btn" href="/tab/todo.html" data-tab-trigger="todo">펼쳐보기</a>
+          </div>
+          <ul class="todo-list">
+            <li class="active">
+              <p class="todo--time">13:00</p>
+              <p class="todo--title">부과내역서확인</p>
+            </li>
+            <li class="">
+              <p class="todo--time">13:00</p>
+              <p class="todo--title">부과내역서확인</p>
+            </li>
+            <li class="">
+              <p class="todo--time">13:00</p>
+              <p class="todo--title">부과내역서확인</p>
+            </li>
+            <li class="">
+              <p class="todo--time">13:00</p>
+              <p class="todo--title">부과내역서확인</p>
+            </li>
+            <li class="">
+              <p class="todo--time">13:00</p>
+              <p class="todo--title">부과내역서확인</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="/module/examForm.js" defer></script> -->
+</body>
+</html>

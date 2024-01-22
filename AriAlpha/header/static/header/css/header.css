@@ -1,0 +1,331 @@
+:root {
+  --header-info-container-height: var(--size-xxxl);
+}
+
+header.main--header_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: var(--header-info-container-height);
+  user-select: none;
+  border-radius: var(--rounded-box);
+}
+header.main--header_container a, header.main--header_container a:link, header.main--header_container a:visited {
+  color: var(--color-text);
+}
+header.main--header_container, header.main--header_container ul, header.main--header_container li {
+  list-style: none;
+}
+header.main--header_container > div:not(.header-info-modal) {
+  display: flex;
+  margin-bottom: var(--size-xs);
+}
+header.main--header_container > div:first-child {
+  width: 30%;
+}
+header.main--header_container > div:nth-child(2) {
+  width: 70%;
+}
+header.main--header_container .btn-icon-r {
+  width: 100%;
+  padding: var(--size-s) var(--margin);
+}
+header.main--header_container .apt-info {
+  z-index: 2;
+}
+header.main--header_container .apt-info > * {
+  margin-right: var(--margin);
+}
+header.main--header_container .apt-info .btn-icon-r {
+  width: calc(100% - var(--margin) - var(--size-xxl));
+}
+header.main--header_container.is-open {
+  --header-info-container-height: calc(var(--size-xxxl) * 2 + var(--size-xxxs));
+}
+header.main--header_container.is-open .header-info-modal {
+  display: flex;
+}
+
+.header--nav_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+  height: var(--size-xxxl);
+}
+.header--nav_container > * {
+  margin-left: var(--size-xxxs);
+}
+.header--nav_container > .is-open button::before {
+  opacity: 1 !important;
+}
+.header--nav_container > .is-open .sitemap, .header--nav_container > .is-open .modal-group-menu {
+  display: block;
+}
+
+.group-menu-container {
+  position: absolute;
+  display: none;
+  top: 100%;
+  z-index: 100;
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  background: var(--color-background);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  width: 100%;
+  padding: var(--margin);
+}
+.group-menu-container a {
+  display: block;
+  padding: var(--size-xxxs) 0;
+}
+.group-menu-container.active {
+  display: block;
+}
+
+.modal-group-menu {
+  position: absolute;
+  z-index: 10;
+  border-radius: var(--rounded-button);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  background: var(--color-background);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  width: 100%;
+  padding: var(--margin);
+  margin-top: var(--size-xs);
+  display: none;
+}
+.modal-group-menu a {
+  display: block;
+  padding: var(--size-xxxs) 0;
+}
+
+.header-info-modal {
+  width: 100%;
+  border-radius: var(--rounded-button);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  height: var(--size-xxxl);
+  padding: var(--size-xxxs) var(--margin);
+  align-items: center;
+  margin-bottom: 0 !important;
+  display: none;
+}
+.header-info-modal > * {
+  margin-right: var(--margin);
+}
+.header-info-modal .close-btn {
+  position: absolute;
+  right: var(--margin);
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.sitemap {
+  position: fixed;
+  z-index: 1000;
+  right: var(--margin);
+  left: var(--margin);
+  width: calc(100% - var(--margin) * 2);
+  bottom: var(--margin);
+  top: calc(var(--margin) - var(--size-xxs) + var(--size-xxxl) + var(--size-s));
+  padding: var(--margin) var(--size-l) 0;
+  border-radius: var(--rounded-box);
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  background: var(--color-invert);
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.sitemap h4 {
+  width: calc((100vw - var(--margin) * 2) / 12);
+  height: var(--size-xxxl);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.sitemap, .sitemap ul, .sitemap li {
+  list-style: none;
+}
+.sitemap li {
+  display: flex;
+  gap: var(--margin);
+  flex-wrap: wrap;
+}
+.sitemap > ul > li {
+  margin-bottom: var(--size-xs);
+  align-items: center;
+}
+.sitemap > div {
+  display: flex;
+  flex: 1;
+  gap: var(--margin);
+  height: calc(100% - var(--size-xxl) * 2 - var(--size-xxs) * 4);
+}
+.sitemap > div > div:nth-child(1) {
+  width: 80%;
+}
+.sitemap > div > div:nth-child(2) {
+  width: 20%;
+  min-width: 230px;
+}
+.sitemap .menu-scroller {
+  flex: 1;
+  overflow-y: scroll;
+  padding-bottom: var(--size-l);
+  scroll-behavior: smooth;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.sitemap .menu-scroller::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.sitemap .menu-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sitemap .menu-scroller::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.sitemap .menu-scroller::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+.sitemap .sitemap-index-container {
+  display: flex;
+  background: var(--primary-lightest);
+  border-radius: var(--rounded-box);
+  flex: 1;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.sitemap .sitemap-index-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.sitemap .sitemap-index-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sitemap .sitemap-index-container::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.sitemap .sitemap-index-container::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+.sitemap .sitemap-index-container > li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+.sitemap .sitemap-index-container > li.active {
+  background: var(--primary-middle);
+  border-radius: var(--rounded-box);
+  color: var(--color-invert);
+}
+.sitemap .sitemap-index-container a {
+  color: inherit;
+  height: var(--size-xxxl);
+  font-size: var(--font-h4);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: var(--rounded-box);
+}
+.sitemap .sitemap-index-container a:hover {
+  background: var(--primary-middle);
+  color: var(--color-invert);
+}
+.sitemap .sitemap-menu-container h4 {
+  color: var(--primary-middle);
+}
+.sitemap .sitemap-menu-container > li, .sitemap .sitemap-menu-container h5 {
+  flex-wrap: nowrap;
+  margin-bottom: var(--margin);
+}
+.sitemap .sitemap-menu-container > li > ul {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--color-invertBackground);
+  stroke: var(--color-invertStroke);
+  border-radius: var(--rounded-box);
+  padding: var(--margin);
+  gap: var(--margin);
+}
+.sitemap .sitemap-menu-container ul > li {
+  display: block;
+  width: calc((100vw - var(--margin) * 2) / 12);
+  flex-shrink: 0;
+  word-break: break-all;
+  font-size: var(--font-sp);
+}
+.sitemap .sitemap-menu-container ul > li a {
+  cursor: pointer;
+  display: block;
+  padding: calc(var(--size-xxxs) / 2) 0;
+}
+.sitemap .sitemap-menu-container li ul li ul li {
+  padding: 1px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-flow: inherit;
+  justify-content: space-between;
+  gap: 0;
+}
+.sitemap .sitemap-menu-container li ul li ul li a {
+  overflow-wrap: anywhere;
+}
+.sitemap .sitemap-menu-container li ul li ul li .icon {
+  flex-shrink: 0;
+}
+.sitemap .sitemap-menu-container li ul li ul li .icon svg path {
+  fill: var(--grayscale-40);
+}
+.sitemap .groupmenu-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.sitemap .groupmenu-cart .group-mode-off, .sitemap .groupmenu-cart .group-mode-on {
+  flex: 1;
+  height: calc(100% - var(--size-xxl));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+  padding-bottom: var(--margin);
+}
+.sitemap .groupmenu-cart button.w-full {
+  margin-bottom: var(--size-s);
+}
+.sitemap .groupmenu-cart.active .group-mode-on, .sitemap .groupmenu-cart:not(.active) .group-mode-off {
+  display: flex;
+}
+.sitemap .groupmenu-cart .group-mode-on .group-mode-cart {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}
+.sitemap .groupmenu-cart h4 {
+  justify-content: center;
+}

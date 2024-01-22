@@ -1,0 +1,212 @@
+// ----------------- positioning ----------------- //
+
+.fx-full{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// ----------------- width ----------------- //
+
+.w-full{
+  @include w-full;
+}
+
+.w-auto{
+  width: auto;
+}
+
+// ----------------- font ----------------- //
+
+
+//size
+
+h1{
+  font-size: var(--font-h1);
+  font-weight: 700;
+}
+h2{
+  font-size: var(--font-h2);
+  font-weight: 700;
+}
+h3{
+  font-size: var(--font-h3);
+  font-weight: 700;
+}
+
+h4{
+  font-size: var(--font-h4);
+  font-weight: 700;
+}
+
+h5{
+  font-size: var(--font-p);
+  font-weight: 600;
+}
+
+.sp{
+  font-size: var(--font-sp);
+  font-weight: 500;
+}
+.sp2{
+  font-size: var(--font-sp2);
+  font-weight: 500;
+}
+
+.description{
+  @include description;
+  color: var(--grayscale-40)
+}
+
+.text-center{
+  @include textCenter;
+}
+//weight
+
+.weight-400{
+  font-weight:400;
+}
+.weight-500{
+  font-weight:500;
+}
+
+// ----------------- sizing ----------------- //
+
+.size-s{
+  @include size-s;
+}
+.size-xs{
+  @include size-xs;
+}
+
+.size-m1{
+  @include size-m1;
+}
+.size-m2{
+  @include size-m2;
+}
+.size-m3{
+  @include size-m3;
+}
+.size-m4{
+  @include size-m4;
+}
+
+.size-l{
+  @include size-l;
+}
+.size-xl{
+  @include size-xl;
+}
+.size-xxl{
+  @include size-xxl;
+}
+.size-xxxl{
+  @include size-xxxl;
+
+  &.w-full{
+    width: 100%;
+  }
+}
+
+// ----------------- background / fill ----------------- //
+
+.bg-transparent{
+  background:transparent;
+}
+
+.bg-primary-middle{
+  background: var(--primary-middle);
+}
+
+.text-primary-middle{
+  @include text-primary-middle;
+}
+
+.bg-grayscale-40{
+  @include bg-grayscale-40
+}
+
+.bg-error{
+  @include bg-error;
+}
+
+.bg-blur{
+  @include bg-blur;
+}
+
+.bg-warn{
+  background: var(--color-warn);
+}
+.bg-view{
+  background: var(--color-view);
+}
+.bg-new{
+  background: var(--color-new);
+}
+.bg-default{
+  background: var(--color-default);
+}
+
+.color-warn{
+  color: var(--color-warn);
+}
+.color-error{
+  color: var(--color-error);
+}
+.color-success{
+  color: var(--color-success);
+}
+
+.fill-invert{
+  fill: var(--color-invert);
+}
+
+.fill-primary-middle{
+  fill: var(--primary-middle);
+}
+.fill-grayscale-20{
+  fill: var(--grayscale-20);
+}
+.fill-grayscale-40{
+  fill: var(--grayscale-40);
+}
+
+// ----------------- display ----------------- //
+
+.flex{
+  display: flex;
+}
+
+.flex-center{
+  @include flexCenter;
+}
+.flex-col{
+  @include flexCol;
+}
+
+.flex-1{
+  flex: 1
+}
+
+.flex-btn-row{
+  @include flexBetween;
+  gap: var(--size-s);
+  >*{
+    width: 50%;
+  }
+}
+
+.flex-full{
+  flex: 1;
+}
+
+.gap-marg{
+  gap: var(--margin);
+}
+
+.gap-0{
+  gap: 0 !important;
+}

@@ -1,0 +1,148 @@
+@import "mixin";
+.login{
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.step{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  >div{
+    width: 100%;
+  }
+  &.active{
+    display: flex;
+  }
+}
+form{
+  display: block;
+  width: 100%;
+}
+
+.login-container{
+  display: flex;
+  height: clamp(680px, 80vh, 80vh);
+  width: 100%;
+  max-width: 1600px;
+  max-height: 900px;
+  padding: var(--size-xxxl);
+  gap: var(--size-l);
+
+  >div{
+    width: 50%;   
+
+    &:last-child{
+      @include modalBox;
+      @include rounded(24px);
+    }
+  }
+  .preview-contents-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-m1) var(--size-m2);
+    
+
+    >div{
+      width: calc(50% - var(--size-m2));
+      height: calc(33.3% -  var(--size-m1));
+      @include modalBox;
+      @include rounded(24px);
+      padding: var(--size-m3);
+
+      h2{
+        color: var(--primary-middle);
+        margin-bottom: var(--size-xxs);
+      }
+
+      p{
+        line-height: 1.44;
+      }
+
+      .icon{
+        position: absolute;
+        right: var(--size-s);
+        bottom: 4px;
+        width: 35%;    
+
+        svg path{
+          fill: var(--primary-middle);
+        }
+      }
+    }
+  }
+
+  .login-form-container{
+    padding: var(--size-xxxl);
+    @include flexCol;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--size-l);
+  }
+
+  form{
+    flex: 1;
+  }
+
+  .login-title{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+    // margin-bottom: var(--margin);
+
+    p, h4, h3{
+      margin-bottom: var(--size-l);
+    }
+
+    svg path{
+      fill: var(--primary-middle);
+    }
+  }
+  .title-logo{
+    width: 80%;
+  }
+
+  #loginForm{
+    label input:not([type=checkbox], [type=radio]){
+      width: 100%;
+    }
+  }
+
+  input[type=button], .label--input-text, .label--input-flex{
+    margin-bottom: var(--margin);
+  }
+
+  input[type=button], .label--input-text{
+    display: block;
+  }
+}
+
+input.bg-primary-middle{
+  color: var(--color-invert);
+  font-weight: 650;
+}
+
+.input-time-container{
+  display: flex;
+  gap: var(--margin);
+  >div{
+    flex: 1;
+  }
+  
+  .time{
+    color: var(--primary-middle);
+    position: absolute;
+    right: var(--margin);
+    top: 50%;
+    transform: translate(0, -50%);
+    @include fontP
+  }
+}

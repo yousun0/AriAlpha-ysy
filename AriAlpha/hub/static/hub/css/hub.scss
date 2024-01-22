@@ -1,0 +1,113 @@
+@import "mixin";
+
+.hub main{
+  padding: var(--margin) var(--size-xxxl) var(--size-xxxl);
+  min-height: 100vh;
+  @include flexCol;
+
+  header, .image-container{
+    margin-bottom: var(--size-m2);
+  }
+  header{
+    display: flex;
+    justify-content: space-between;
+    height: var(--size-xxxl);
+
+    .logo, .prof{
+      height: 100%;
+    }
+
+    .logo{
+      width: calc(var(--size-xxxl) * (259 / 86.577));
+      height: var(--size-xxxl);
+
+      svg path{
+        fill: var(--primary-middle);
+      }
+    }
+
+    .prof{
+      display: flex;
+      align-items: center;
+    }
+
+    .prof--img{
+      width: var(--size-xxxl);
+      height: var(--size-xxxl);
+      background-size: cover;
+      @include rounded(100px);
+      margin-right: var(--margin);
+    }
+  }
+
+  .image-container{
+    flex: 1;
+    @include modalBox;
+  }
+
+  .blocks{
+    display: flex;
+    height: clamp(180px, 20vw, 256px);
+    gap: var(--margin);
+    line-height: 1.4;
+
+    .big-col{
+      width: 20%;
+      height: 100%;
+
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .cols{
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--margin);
+      >div{
+        width: calc((100% - var(--margin) * 3) * 0.25);
+        height: calc((100% - var(--margin)) * 0.5);
+      }
+    }
+
+    .big-col:not(h3), .cols >div{
+      @include modalBox;
+    }
+
+    .big-col, .cols>div{
+      padding: var(--size-m1) var(--size-m3);
+    }
+
+    p{
+      color: var(--grayscale-40);
+    }
+
+
+    h3:not(.big-col){
+      color: var(--primary-middle);
+    }
+
+    .big-col h3{
+      margin-bottom: var(--size-xl);
+    }
+    
+    // .cols>div h3{
+    //   margin-bottom: var(--size-m1);
+    // }
+
+    .cols>div a{
+      @include flexCol;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .go-arrow{
+      position:absolute;
+      right: -0.2rem;
+      top: 0.2rem;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/util.js"></script>
+  <script src="../data/nav.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="./modal.css">
+  <title>그룹메뉴 관리</title>
+</head>
+<body class="tab-body modal">
+  <!-- 아래 div가 기존 data-tab div 내부에 삽입됩니다. -->
+<div id="pageContent" class="groupmenu-setting">
+  <h3>그룹메뉴 관리</h3>
+  <form id="formGroupmenuSetting" class=" transfer-form">
+    <div class="transfer-container">
+      <div>
+        <h4>전체메뉴</h4>
+        <ul id="source_container"></ul>
+      </div>
+      <div class="transfer-controller">
+        <button type="button" class="btn-quaternary" id="add_menu">
+          <div class="icon icon-circle bg-primary-middle size-m2 ">
+            <svg viewBox="0 0 12 12"><path d="M3.48848 0.489191C3.19558 0.782079 3.19557 1.25695 3.48846 1.54985L7.93935 6.00091L3.48847 10.4518C3.19558 10.7447 3.19558 11.2196 3.48847 11.5124C3.78136 11.8053 4.25624 11.8053 4.54913 11.5124L9.53033 6.53125C9.82322 6.23836 9.82322 5.76349 9.53034 5.4706L4.54914 0.489211C4.25625 0.196312 3.78138 0.196304 3.48848 0.489191Z" /></svg>
+          </div>
+          추가
+        </button>
+        <button type="button" class="btn-quaternary" id="remove_menu">
+          <div class="icon icon-circle bg-primary-middle size-m2 ">
+            <svg viewBox="0 0 12 12"><path d="M8.51152 0.489191C8.80442 0.782079 8.80443 1.25695 8.51154 1.54985L4.06065 6.00091L8.51153 10.4518C8.80442 10.7447 8.80442 11.2196 8.51153 11.5124C8.21864 11.8053 7.74376 11.8053 7.45087 11.5124L2.46967 6.53125C2.17678 6.23836 2.17678 5.76349 2.46966 5.4706L7.45086 0.489211C7.74375 0.196312 8.21862 0.196304 8.51152 0.489191Z" /></svg>
+          </div>
+          빼기
+        </button>
+      </div>
+      <div>
+        <h4>그룹메뉴</h4>
+        <input type="text" placeholder="메뉴 이름" id="groupmenu_name" name="groupmenu_name">
+        <ul id="target_container" class="draggable-order-container"></ul>
+      </div>
+    </div>
+    <div>
+      <h4>메뉴 순서</h4>
+      <div>
+        <label class="label--input-flex" for="place_top">
+          <input type="radio" name="placeby" id="place_top" checked>
+          <p>새 그룹메뉴 최상단에 추가</p>
+        </label>
+        <label class="label--input-flex" for="place_bottom">
+          <input type="radio" name="placeby" id="place_bottom" checked>
+          <p>새 그룹메뉴 최하단에 추가</p>
+        </label>
+      </div>
+    </div>
+    <div class="flex-btn-row">
+      <button type="submit" class="btn-primary-l" >저장</button>
+      <button class="btn-secondary-l" id="closeModal">취소</button>
+    </div>
+  </form>
+</div>
+
+<script src="groupmenu-setting.js"></script>
+</body>
+</html>
